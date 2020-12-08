@@ -6,4 +6,4 @@ WORKDIR /usr/src/redmine/plugins
 RUN  git clone https://github.com/devopskube/redmine_openid_connect.git
 RUN  git clone https://github.com/phlegx/redmine_gitlab_hook.git
 WORKDIR /usr/src/redmine
-RUN  /docker-entrypoint.sh
+RUN  bundle check || bundle install --without development test
